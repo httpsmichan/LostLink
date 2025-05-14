@@ -8,7 +8,8 @@ import {
   Image,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import { Button } from "react-native-elements"; // Added react-native-elements
+import { Button } from "react-native-elements";
+import LocationImage from "../components/images/location.png";
 
 export default function RegisterForm() {
   const navigation = useNavigation();
@@ -43,10 +44,14 @@ export default function RegisterForm() {
     <View style={styles.container}>
       {/* Logo (Placeholder - You can replace this with your actual logo) */}
       <View style={styles.logoContainer}>
-        <Text style={styles.logo}>Logo</Text>
+        <Image
+          source={LocationImage}
+          style={styles.logoImage}
+          resizeMode="contain"
+        />
       </View>
 
-      <Text style={styles.title}>Welcome!</Text>
+      <Text style={styles.title}>Register</Text>
 
       {/* Form Container */}
       <View style={styles.formContainer}>
@@ -166,7 +171,7 @@ const styles = StyleSheet.create({
   },
   logoContainer: {
     alignItems: "center",
-    marginBottom: 20,
+    marginTop: 20,
   },
   separatorText: {
     marginBottom: 15,
@@ -182,10 +187,16 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "#007bff", // Blue color
   },
+  logoImage: {
+    width: 60,
+    height: 60,
+    alignSelf: "center",
+  },
+
   title: {
-    fontSize: 24,
+    fontSize: 20,
     fontWeight: "bold",
-    marginBottom: 30,
+    marginBottom: 10,
     textAlign: "center",
     color: "#2c3e50", // Dark gray title
   },
@@ -212,7 +223,7 @@ const styles = StyleSheet.create({
     color: "#333",
   },
   formContainer: {
-    backgroundColor: "#fff",
+    backgroundColor: "#d3d9e3",
     padding: 15,
     borderRadius: 10,
     elevation: 5, // Adds shadow for Android devices
@@ -263,7 +274,7 @@ const styles = StyleSheet.create({
     height: 20, // Adjust size as necessary
   },
   signUpButton: {
-    backgroundColor: "#3498db", // Blue button color
+    backgroundColor: "#0FAEFF", // Blue button color
     borderRadius: 8,
     paddingVertical: 12,
     marginTop: 10,

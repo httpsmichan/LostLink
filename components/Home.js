@@ -19,13 +19,15 @@ const recentlyFoundItems = [
     id: 1,
     title: "Airpods Pro",
     location: "Found at Gym",
-    image: "https://via.placeholder.com/150",
+    image:
+      "https://i.pinimg.com/736x/c6/cd/4c/c6cd4c602f2b23e28e1707cecc60e92c.jpg",
   },
   {
     id: 2,
     title: "Iphone 13",
     location: "Found at the Outside",
-    image: "https://via.placeholder.com/150",
+    image:
+      "https://i.pinimg.com/736x/0c/a2/f3/0ca2f3e98277ef86d79fcfa489d41832.jpg",
   },
 ];
 
@@ -34,13 +36,15 @@ const lostItems = [
     id: 3,
     title: "Wallet",
     location: "Lost at Canteen",
-    image: "https://via.placeholder.com/150",
+    image:
+      "https://i.pinimg.com/736x/f5/d7/d5/f5d7d50d440371b322e570c6e1911335.jpg",
   },
   {
     id: 4,
     title: "Keys",
     location: "Lost at Parking",
-    image: "https://via.placeholder.com/150",
+    image:
+      "https://i.pinimg.com/736x/69/be/43/69be43c050f55b5ac38814dc80524781.jpg",
   },
 ];
 

@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigation } from "@react-navigation/native";
 import {
   View,
   Text,
@@ -11,6 +12,7 @@ import {
 import { Button } from "react-native-elements"; // Added Button
 
 const Match = () => {
+  const navigation = useNavigation();
   // Dummy data for matched items
   const matchedItems = [
     {
@@ -18,28 +20,32 @@ const Match = () => {
       title: "YSL Wallet",
       location: "Found at Spa",
       matchPercent: "75% Match",
-      image: "https://via.placeholder.com/100x100",
+      image:
+        "https://i.pinimg.com/736x/19/47/62/194762ba9fe300e189008d6f32f978a4.jpg",
     },
     {
       id: 2,
       title: "White Wallet",
       location: "Found at Canteen",
       matchPercent: "100% Match",
-      image: "https://via.placeholder.com/100x100",
+      image:
+        "https://i.pinimg.com/736x/7e/f0/6c/7ef06c5ba419b6de7f3769eca445a38e.jpg",
     },
     {
       id: 3,
       title: "Wallet",
       location: "Found at Canteen",
       matchPercent: "80% Match",
-      image: "https://via.placeholder.com/100x100",
+      image:
+        "https://i.pinimg.com/736x/c5/db/a8/c5dba8ce16eab52a9e4e65d325548eac.jpg",
     },
     {
       id: 4,
       title: "Wallet",
       location: "Found at Canteen",
       matchPercent: "80% Match",
-      image: "https://via.placeholder.com/100x100",
+      image:
+        "https://i.pinimg.com/736x/53/44/95/5344953e1edefeefd46af6d4740e5dac.jpg",
     },
   ];
 
@@ -53,7 +59,9 @@ const Match = () => {
       {/* Missing Item Details */}
       <View style={styles.missingItemContainer}>
         <Image
-          source={{ uri: "https://via.placeholder.com/150x150" }}
+          source={{
+            uri: "https://i.pinimg.com/736x/ab/d6/9e/abd69e61bee63ac03bb8afb10cac779f.jpg",
+          }}
           style={styles.missingItemImage}
         />
         <View style={styles.missingItemTextContainer}>
@@ -85,7 +93,9 @@ const Match = () => {
                 title="Claim Now"
                 buttonStyle={styles.claimButton}
                 titleStyle={styles.claimButtonText}
+                onPress={() => navigation.navigate("Ownership")}
               />
+
               <Button
                 title="Contact Finder"
                 buttonStyle={styles.contactButton}
@@ -103,7 +113,7 @@ const styles = StyleSheet.create({
   container: {
     marginTop: 30,
     flex: 1,
-    backgroundColor: "#f0f4f8", // Light background
+    backgroundColor: "#f9f9f9", // Light background
   },
   header: {
     flexDirection: "row",

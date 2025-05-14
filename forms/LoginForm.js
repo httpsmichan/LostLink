@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import {
   View,
   TextInput,
-  Button,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -10,6 +9,8 @@ import {
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { Checkbox } from "react-native-paper";
+import { Button } from "react-native-elements";
+import LocationImage from "../components/images/location.png";
 
 export default function LoginForm() {
   const navigation = useNavigation();
@@ -38,7 +39,14 @@ export default function LoginForm() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Login</Text>
+      <View style={styles.logoContainer}>
+        <Image
+          source={LocationImage}
+          style={styles.logoImage}
+          resizeMode="contain"
+        />
+        <Text style={styles.title}>LogIn</Text>
+      </View>
 
       <View style={styles.formContainer}>
         <Text style={styles.inputLabel}>Email</Text>
@@ -76,7 +84,20 @@ export default function LoginForm() {
         {error ? <Text style={styles.errorText}>{error}</Text> : null}
         {success ? <Text style={styles.successText}>{success}</Text> : null}
 
-        <Button title="Login" onPress={handleLogin} />
+        <Button
+          title="Login"
+          onPress={handleLogin}
+          buttonStyle={{
+            backgroundColor: "#0FAEFF",
+            borderRadius: 8,
+            paddingVertical: 12,
+          }}
+          titleStyle={{
+            fontSize: 18,
+            fontWeight: "bold",
+            backgroundColor: "#0FAEFF",
+          }}
+        />
       </View>
 
       <View style={styles.separatorContainer}>
@@ -140,13 +161,14 @@ const styles = StyleSheet.create({
     marginLeft: 8,
   },
   title: {
-    fontSize: 28,
-    marginBottom: 20,
-    textAlign: "center",
+    fontSize: 20,
     fontWeight: "bold",
+    marginBottom: 10,
+    textAlign: "center",
+    color: "#2c3e50", // Dark gray title
   },
   formContainer: {
-    backgroundColor: "#f5f5f5",
+    backgroundColor: "#d3d9e3",
     padding: 15,
     borderRadius: 10,
     marginBottom: 10,
@@ -170,6 +192,15 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: "red",
     marginBottom: 10,
+  },
+  logoContainer: {
+    alignItems: "center",
+    marginTop: 20,
+  },
+  logoImage: {
+    width: 60,
+    height: 60,
+    alignSelf: "center",
   },
   successText: {
     textAlign: "center",

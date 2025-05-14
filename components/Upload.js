@@ -25,7 +25,7 @@ const Upload = () => {
     <ScrollView style={styles.container}>
       {/* Header */}
       <View style={styles.header}>
-        <Text style={styles.headerTitle}>Upload Lost Item</Text>
+        <Text style={styles.headerTitle}>Upload Item</Text>
       </View>
 
       {/* Image Upload Area */}
