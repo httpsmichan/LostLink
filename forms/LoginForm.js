@@ -1,4 +1,3 @@
-// LoginForm.js
 import React, { useState } from "react";
 import {
   View,
@@ -7,33 +6,33 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
+  Image,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import { Checkbox } from "react-native-paper";
 
 export default function LoginForm() {
   const navigation = useNavigation();
 
-  // Default credentials
   const defaultEmail = "janedoe@gmail.com";
   const defaultPassword = "janedoe123";
 
-  // State to track email, password, success, and error message
-  const [email, setEmail] = useState(defaultEmail); // Pre-fill email with default
-  const [password, setPassword] = useState(defaultPassword); // Pre-fill password with default
+  const [email, setEmail] = useState(defaultEmail);
+  const [password, setPassword] = useState(defaultPassword);
   const [error, setError] = useState("");
-  const [success, setSuccess] = useState(""); // Success message state
+  const [success, setSuccess] = useState("");
+  const [keepSignedIn, setKeepSignedIn] = useState(false); // Dummy state for checkbox
 
   const handleLogin = () => {
-    // Check if email and password match the default ones
     if (email === defaultEmail && password === defaultPassword) {
-      setError(""); // Clear any previous error
-      setSuccess("Login successful!"); // Set success message
+      setError("");
+      setSuccess("Login successful!");
       setTimeout(() => {
-        navigation.navigate("Home"); // Navigate to Home after 2 seconds
+        navigation.navigate("Home");
       }, 2000);
     } else {
-      setError("Invalid email or password."); // Set error message
-      setSuccess(""); // Clear success message if there's an error
+      setError("Invalid email or password.");
+      setSuccess("");
     }
   };
 
@@ -41,33 +40,76 @@ export default function LoginForm() {
     <View style={styles.container}>
       <Text style={styles.title}>Login</Text>
 
-      <TextInput
-        placeholder="Email"
-        style={styles.input}
-        keyboardType="email-address"
-        value={email} // Set the value of email field to the email state
-        onChangeText={(text) => setEmail(text)}
-      />
+      <View style={styles.formContainer}>
+        <Text style={styles.inputLabel}>Email</Text>
+        <TextInput
+          placeholder="Email"
+          style={styles.input}
+          keyboardType="email-address"
+          value={email}
+          onChangeText={(text) => setEmail(text)}
+        />
 
-      <TextInput
-        placeholder="Password"
-        style={styles.input}
-        secureTextEntry
-        value={password} // Set the value of password field to the password state
-        onChangeText={(text) => setPassword(text)}
-      />
+        <TouchableOpacity
+          onPress={() => console.log("Forgot Password pressed")}
+        >
+          <Text style={styles.forgotPasswordText}>Forgot Password?</Text>
+        </TouchableOpacity>
 
-      {/* Display error message if there's one */}
-      {error ? <Text style={styles.errorText}>{error}</Text> : null}
+        <Text style={styles.inputLabel}>Password</Text>
+        <TextInput
+          placeholder="Password"
+          style={styles.input}
+          secureTextEntry
+          value={password}
+          onChangeText={(text) => setPassword(text)}
+        />
 
-      {/* Display success message if login is successful */}
-      {success ? <Text style={styles.successText}>{success}</Text> : null}
+        <View style={styles.checkboxContainer}>
+          <Checkbox
+            status={keepSignedIn ? "checked" : "unchecked"}
+            onPress={() => setKeepSignedIn(!keepSignedIn)}
+          />
+          <Text style={styles.checkboxLabel}>Keep me signed in</Text>
+        </View>
 
-      <Button title="Login" onPress={handleLogin} />
+        {error ? <Text style={styles.errorText}>{error}</Text> : null}
+        {success ? <Text style={styles.successText}>{success}</Text> : null}
 
-      <TouchableOpacity onPress={() => navigation.navigate("Register")}>
-        <Text style={styles.linkText}>Not a member yet? Register here</Text>
-      </TouchableOpacity>
+        <Button title="Login" onPress={handleLogin} />
+      </View>
+
+      <View style={styles.separatorContainer}>
+        <Text style={styles.separatorText}>
+          -------- or continue with --------
+        </Text>
+
+        <View style={styles.socialButtonsContainer}>
+          <TouchableOpacity style={styles.socialButton}>
+            <Image
+              source={{
+                uri: "https://i.pinimg.com/736x/59/7f/11/597f11b631d7d94492f1adb95110cc44.jpg",
+              }}
+              style={styles.socialButtonImage}
+            />
+            <Text style={styles.socialButtonText}>Google</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.socialButton}>
+            <Image
+              source={{
+                uri: "https://i.pinimg.com/736x/57/89/43/578943fe258769a4d9e457ea0809a22d.jpg",
+              }}
+              style={styles.socialButtonImage}
+            />
+
+            <Text style={styles.socialButtonText}>Facebook</Text>
+          </TouchableOpacity>
+        </View>
+        <TouchableOpacity onPress={() => navigation.navigate("Register")}>
+          <Text style={styles.linkText}>Not a member yet? Register here</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }
@@ -75,9 +117,27 @@ export default function LoginForm() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
+    padding: 15,
     justifyContent: "center",
     backgroundColor: "#fff",
+  },
+  inputLabel: {
+    fontSize: 14,
+    marginBottom: 5,
+    color: "#333",
+  },
+  forgotPasswordText: {
+    color: "#007bff",
+    marginBottom: 5,
+    textAlign: "right",
+  },
+  checkboxContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: 5,
+  },
+  checkboxLabel: {
+    marginLeft: 8,
   },
   title: {
     fontSize: 28,
@@ -85,40 +145,67 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontWeight: "bold",
   },
+  formContainer: {
+    backgroundColor: "#f5f5f5",
+    padding: 15,
+    borderRadius: 10,
+    marginBottom: 10,
+  },
   input: {
     borderColor: "#ccc",
     borderWidth: 1,
     padding: 12,
     marginBottom: 15,
     borderRadius: 6,
+    backgroundColor: "#fff",
   },
+
   linkText: {
-    marginTop: 20,
+    marginTop: 30,
     textAlign: "center",
     color: "#007bff",
   },
   errorText: {
-    position: "absolute",
-    bottom: 20,
-    left: 50,
-    right: 50,
     textAlign: "center",
     fontSize: 14,
-    color: "black",
-    backgroundColor: "rgba(240, 240, 240, 0.5)", // Gray background with 50% opacity
-    paddingVertical: 5,
-    borderRadius: 20,
+    color: "red",
+    marginBottom: 10,
   },
   successText: {
-    position: "absolute",
-    bottom: 20,
-    left: 50,
-    right: 50,
     textAlign: "center",
     fontSize: 14,
-    color: "black",
-    backgroundColor: "rgba(240, 240, 240, 0.5)", // Success background
-    paddingVertical: 5,
-    borderRadius: 20,
+    color: "green",
+    marginBottom: 10,
+  },
+  separatorContainer: {
+    marginTop: 20,
+    alignItems: "center",
+  },
+  separatorText: {
+    marginBottom: 15,
+    fontSize: 14,
+    color: "#777",
+  },
+  socialButtonsContainer: {
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  socialButton: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginHorizontal: 10,
+    backgroundColor: "#f5f5f5",
+    padding: 10,
+    borderRadius: 6,
+  },
+  socialButtonImage: {
+    width: 20,
+    height: 20,
+    marginRight: 8,
+  },
+  socialButtonText: {
+    fontSize: 16,
+    color: "#333",
   },
 });

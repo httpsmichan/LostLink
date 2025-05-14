@@ -28,11 +28,31 @@ const Tab = createBottomTabNavigator();
 function MainTabs() {
   return (
     <Tab.Navigator initialRouteName="Home">
-      <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Upload" component={Upload} />
-      <Tab.Screen name="Match" component={Match} />
-      <Tab.Screen name="Report" component={Report} />
-      <Tab.Screen name="Profile" component={Profile} />
+      <Tab.Screen
+        name="Home"
+        component={Home}
+        options={{ headerShown: false }}
+      />
+      <Tab.Screen
+        name="Upload"
+        component={Upload}
+        options={{ headerShown: false }}
+      />
+      <Tab.Screen
+        name="Match"
+        component={Match}
+        options={{ headerShown: false }}
+      />
+      <Tab.Screen
+        name="Report"
+        component={Report}
+        options={{ headerShown: false }}
+      />
+      <Tab.Screen
+        name="Profile"
+        component={Profile}
+        options={{ headerShown: false }}
+      />
     </Tab.Navigator>
   );
 }
