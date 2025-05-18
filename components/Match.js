@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
   container: {
     marginTop: 30,
     flex: 1,
-    backgroundColor: "#f9f9f9", // Light background
+    backgroundColor: "#f9f9f9",
   },
   header: {
     flexDirection: "row",
@@ -226,7 +226,7 @@ const styles = StyleSheet.create({
   },
   matchPercent: {
     fontSize: 14,
-    color: "#2ecc71", // Green color
+    color: "#2ecc71",
     fontWeight: "bold",
   },
   matchedItemButtons: {

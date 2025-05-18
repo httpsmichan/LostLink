@@ -165,7 +165,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     marginBottom: 10,
     textAlign: "center",
-    color: "#2c3e50", // Dark gray title
+    color: "#2c3e50",
   },
   formContainer: {
     backgroundColor: "#d3d9e3",

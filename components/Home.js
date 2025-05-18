@@ -8,12 +8,11 @@ import {
   TouchableOpacity,
   Image,
 } from "react-native";
-import { SearchBar } from "react-native-elements"; // Added SearchBar
+import { SearchBar } from "react-native-elements";
 import Feather from "react-native-vector-icons/Feather";
 
-// import { Bell, User, Search, ChevronRight } from 'react-native-vector-icons/feather'; // Removed Feather Icons
-import { Button } from "react-native-elements"; //Added Button
-// Dummy data for recently found and lost items
+import { Button } from "react-native-elements";
+
 const recentlyFoundItems = [
   {
     id: 1,
@@ -124,11 +123,11 @@ const styles = StyleSheet.create({
   container: {
     marginTop: 25,
     flex: 1,
-    backgroundColor: "#f9f9f9", // Light background
+    backgroundColor: "#f9f9f9",
   },
   rightIcons: {
     flexDirection: "row",
-    marginLeft: "auto", // pushes icons to the right
+    marginLeft: "auto",
   },
   iconButton: {
     marginLeft: 15,
@@ -145,14 +144,14 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   searchBarContainer: {
-    backgroundColor: "transparent", // Make the background transparent
-    borderTopWidth: 0, // Remove top border
-    borderBottomWidth: 0, // Remove bottom border
+    backgroundColor: "transparent",
+    borderTopWidth: 0,
+    borderBottomWidth: 0,
     paddingHorizontal: 10,
     marginBottom: 10,
   },
   searchBarInputContainer: {
-    backgroundColor: "#fff", // White background for the input container
+    backgroundColor: "#fff",
     borderRadius: 10,
     borderWidth: 1,
     borderColor: "#ddd",
@@ -171,16 +170,16 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     borderRadius: 20,
     marginRight: 10,
-    backgroundColor: "#e0e0e0", // Light gray background
+    backgroundColor: "#e0e0e0",
   },
   activeFilterTab: {
-    backgroundColor: "#3498db", // Blue for active tab
+    backgroundColor: "#3498db",
   },
   filterText: {
     color: "#333",
   },
   activeFilterText: {
-    color: "#fff", // White text for active tab
+    color: "#fff",
   },
   scrollView: {
     flex: 1,
@@ -190,7 +189,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "bold",
     marginBottom: 15,
-    color: "#2c3e50", // Dark gray
+    color: "#2c3e50",
   },
   itemGrid: {
     flexDirection: "row",
@@ -198,7 +197,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   itemCard: {
-    width: "48%", // Two items per row with a small gap
+    width: "48%",
     backgroundColor: "#fff",
     borderRadius: 10,
     padding: 10,
@@ -207,7 +206,7 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
     shadowRadius: 4,
-    elevation: 3, // For Android shadow
+    elevation: 3,
   },
   itemImage: {
     width: "100%",
@@ -231,7 +230,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
     alignItems: "center",
     paddingVertical: 10,
-    backgroundColor: "#f0f0f0", // Light background for bottom nav
+    backgroundColor: "#f0f0f0",
     borderTopWidth: 1,
     borderTopColor: "#ddd",
   },

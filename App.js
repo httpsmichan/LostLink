@@ -12,7 +12,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Feather from "react-native-vector-icons/Feather"; // Import Feather icons
+import Feather from "react-native-vector-icons/Feather";
 
 import LoginForm from "./forms/LoginForm";
 import RegisterForm from "./forms/RegisterForm";
@@ -21,7 +21,7 @@ import Upload from "./components/Upload";
 import Match from "./components/Match";
 import Report from "./components/Report";
 import Profile from "./components/Profile";
-import Ownership from "./components/Ownership"; // ✅ Imported Ownership
+import Ownership from "./components/Ownership";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -33,9 +33,9 @@ function MainTabs() {
       initialRouteName="Home"
       screenOptions={{
         headerShown: false,
-        tabBarShowLabel: false, // Hide labels in bottom tabs
+        tabBarShowLabel: false,
         tabBarStyle: {
-          backgroundColor: "#f0f0f0", // Set background color of the bottom tab
+          backgroundColor: "#f0f0f0",
         },
       }}
     >
@@ -140,7 +140,6 @@ function SplashScreen({ navigation }) {
   );
 }
 
-// 📱 App Entry
 export default function App() {
   return (
     <NavigationContainer>
@@ -173,10 +172,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   getStartedText: {
-    fontSize: 40, // Increased font size for "LOSTLINK"
+    fontSize: 40,
     fontWeight: "bold",
     marginBottom: 20,
-    color: "#0066cc", // Blue color for text
+    color: "#0066cc",
   },
   background: {
     flex: 1,
@@ -185,7 +184,7 @@ const styles = StyleSheet.create({
   },
   mainContent: {
     alignItems: "center",
-    backgroundColor: "rgba(255, 255, 255, 0.8)", // Optional: semi-transparent overlay
+    backgroundColor: "rgba(255, 255, 255, 0.8)",
     padding: 30,
     borderRadius: 15,
   },
@@ -210,12 +209,12 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     letterSpacing: 2,
     textTransform: "uppercase",
-    textShadowColor: "#010101", // Shadow color
-    textShadowOffset: { width: 2, height: 2 }, // Position of shadow
-    textShadowRadius: 4, // Blur radius
+    textShadowColor: "#010101",
+    textShadowOffset: { width: 2, height: 2 },
+    textShadowRadius: 4,
   },
   button: {
-    backgroundColor: "#0FAEFF", // darker tone of #99C5C6
+    backgroundColor: "#0FAEFF",
     paddingVertical: 12,
     paddingHorizontal: 24,
     borderRadius: 30,

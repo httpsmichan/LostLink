@@ -115,7 +115,6 @@ export default function All({ setActiveTab }) {
 }
 
 const styles = StyleSheet.create({
-  // identical styles from previous snippet
   container: {
     flex: 1,
     marginTop: 30,

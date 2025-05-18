@@ -291,7 +291,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: "bold",
     marginBottom: 15,
-    color: "#3498db", // Blue color for title
+    color: "#3498db",
     textAlign: "center",
   },
   modalText: {
@@ -319,7 +319,7 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   modalCloseButton: {
-    backgroundColor: "#3498db", // Blue button color
+    backgroundColor: "#3498db",
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 6,

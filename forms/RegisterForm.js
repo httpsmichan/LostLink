@@ -18,7 +18,7 @@ export default function RegisterForm() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [message, setMessage] = useState("");
-  const [showPassword, setShowPassword] = useState(false); // State to toggle password visibility
+  const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const handleRegister = () => {
@@ -32,7 +32,6 @@ export default function RegisterForm() {
     }, 2000);
   };
 
-  // Function to toggle password visibility
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
@@ -42,7 +41,6 @@ export default function RegisterForm() {
 
   return (
     <View style={styles.container}>
-      {/* Logo (Placeholder - You can replace this with your actual logo) */}
       <View style={styles.logoContainer}>
         <Image
           source={LocationImage}
@@ -88,7 +86,7 @@ export default function RegisterForm() {
             <Image
               source={{
                 uri: "https://i.pinimg.com/736x/a1/6b/e3/a16be3ace82df3682c215886f31fc929.jpg",
-              }} // URL of the eye icon
+              }}
               style={styles.eyeIconImage}
             />
           </TouchableOpacity>
@@ -110,7 +108,7 @@ export default function RegisterForm() {
             <Image
               source={{
                 uri: "https://i.pinimg.com/736x/a1/6b/e3/a16be3ace82df3682c215886f31fc929.jpg",
-              }} // URL of the eye icon
+              }}
               style={styles.eyeIconImage}
             />
           </TouchableOpacity>
@@ -166,8 +164,8 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 10,
     justifyContent: "center",
-    alignItems: "stretch", // Make children stretch to container width
-    backgroundColor: "#ffffff", // Light blueish background
+    alignItems: "stretch",
+    backgroundColor: "#ffffff",
   },
   logoContainer: {
     alignItems: "center",
@@ -185,7 +183,7 @@ const styles = StyleSheet.create({
   logo: {
     fontSize: 36,
     fontWeight: "bold",
-    color: "#007bff", // Blue color
+    color: "#007bff",
   },
   logoImage: {
     width: 60,
@@ -198,7 +196,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     marginBottom: 10,
     textAlign: "center",
-    color: "#2c3e50", // Dark gray title
+    color: "#2c3e50",
   },
   socialButtonsContainer: {
     flexDirection: "row",
@@ -226,10 +224,10 @@ const styles = StyleSheet.create({
     backgroundColor: "#d3d9e3",
     padding: 15,
     borderRadius: 10,
-    elevation: 5, // Adds shadow for Android devices
-    shadowColor: "#000", // For iOS shadow
-    shadowOpacity: 0.1, // For iOS shadow
-    shadowRadius: 8, // For iOS shadow
+    elevation: 5,
+    shadowColor: "#000",
+    shadowOpacity: 0.1,
+    shadowRadius: 8,
   },
   inputLabel: {
     fontSize: 14,
@@ -241,40 +239,40 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     marginBottom: 5,
     borderRadius: 8,
-    backgroundColor: "#ffffff", // White input background
+    backgroundColor: "#ffffff",
     borderWidth: 1,
-    borderColor: "#e0e0e0", // Light gray border
+    borderColor: "#e0e0e0",
     fontSize: 16,
-    color: "#34495e", // Darker text color
+    color: "#34495e",
   },
   nameInput: {
-    marginTop: 10, // Adjust this value as needed
-    marginBottom: 5, // Adjust this value as needed
+    marginTop: 10,
+    marginBottom: 5,
   },
   passwordContainer: {
     flexDirection: "row",
     alignItems: "center",
     marginBottom: 5,
-    position: "relative", // Add this to position the icon absolutely
+    position: "relative",
   },
   passwordInput: {
     flex: 1,
-    paddingRight: 40, // Make space for the icon
+    paddingRight: 40,
   },
   eyeIcon: {
     position: "absolute",
     right: 20,
     top: "50%",
-    transform: [{ translateY: -12 }], // Center the icon vertically
+    transform: [{ translateY: -12 }],
     padding: 5,
     marginTop: -10,
   },
   eyeIconImage: {
-    width: 20, // Adjust size as necessary
-    height: 20, // Adjust size as necessary
+    width: 20,
+    height: 20,
   },
   signUpButton: {
-    backgroundColor: "#0FAEFF", // Blue button color
+    backgroundColor: "#0FAEFF",
     borderRadius: 8,
     paddingVertical: 12,
     marginTop: 10,
@@ -288,12 +286,12 @@ const styles = StyleSheet.create({
   loginLink: {
     marginTop: 25,
     fontSize: 14,
-    color: "#3498db", // Blue link color
+    color: "#3498db",
     textAlign: "center",
   },
   messageText: {
     marginTop: 20,
     textAlign: "center",
-    color: "#e74c3c", // Red error message color
+    color: "#e74c3c",
   },
 });

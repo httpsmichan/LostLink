@@ -30,7 +30,6 @@ const Upload = () => {
 
       {/* Image Upload Area */}
       <TouchableOpacity style={styles.imageUpload}>
-        {/* <UploadCloud name="upload-cloud" size={50} color="#999" /> */}
         <Text style={styles.uploadText}>Drop your image here or</Text>
         <Text style={styles.browseText}>browse files</Text>
       </TouchableOpacity>
@@ -56,14 +55,8 @@ const Upload = () => {
 
       {/* Category */}
       <Text style={styles.label}>Category</Text>
-      <TouchableOpacity
-        style={styles.selectInput}
-        onPress={() => {
-          /* Handle category selection */
-        }}
-      >
+      <TouchableOpacity style={styles.selectInput} onPress={() => {}}>
         <Text style={styles.selectText}>{category}</Text>
-        {/* <ChevronDown name="chevron-down" size={20} color="#777" /> */}
         <Text>Down</Text>
       </TouchableOpacity>
 
